@@ -3,15 +3,18 @@ import { Injector, NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { createCustomElement } from '@angular/elements';
-import { HeaderSpanComponent, LazyLoadedStylesModule } from '@web-bling/lazy-loaded-styles';
-import { BundledStylesModule, InputComponent } from '@web-bling/bundled-styles';
+
+/**
+ * Switch which module is loaded to see the results of a different strategy.
+ */
+import { LazyLoadedStylesModule as StyleModule, EntryPointComponent } from '@web-bling/lazy-loaded-styles';
+// import { BundledStylesModule as StyleModule, EntryPointComponent } from '@web-bling/bundled-styles';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    LazyLoadedStylesModule,
-    BundledStylesModule
+    StyleModule
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -19,8 +22,7 @@ import { BundledStylesModule, InputComponent } from '@web-bling/bundled-styles';
 export class AppModule {
   constructor(private _injector: Injector) {
     const library = new Map([
-      ['wc-input', InputComponent],
-      ['wc-header-span', HeaderSpanComponent],
+      ['wc-entry', EntryPointComponent],
     ]);
     for (const [name, comp] of library) {
       const webComponent = createCustomElement(comp, {injector: this._injector});

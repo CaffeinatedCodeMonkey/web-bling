@@ -54,6 +54,11 @@
                 "input": "apps/demo/src/assets/header-span.component.scss",
                 "inject": false,
                 "bundleName": "header-span"
+              },
+              {
+                "input": "apps/demo/src/assets/input.component.scss",
+                "inject": false,
+                "bundleName": "input"
               }
             ],
             "scripts": []

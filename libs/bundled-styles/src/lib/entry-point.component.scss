@@ -1,0 +1,14 @@
+@import "/apps/demo/src/styles.scss";
+span {
+  color: red;
+  font-size: 10px;
+}
+div {
+  background: black;
+  label {
+    color: #CCC;
+  }
+  input {
+    color: green;
+  }
+}

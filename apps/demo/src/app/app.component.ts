@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  public iterate = new Array(3);
+  public iterate = new Array(500);
 }
