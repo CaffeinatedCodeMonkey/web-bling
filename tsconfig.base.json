@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@web-bling/standard-baseline": ["libs/standard-baseline/src/index.ts"],
+      "@web-bling/input-web-component": [
+        "libs/input-web-component/src/index.ts"
+      ],
+      "@web-bling/bundled-styles": ["libs/bundled-styles/src/index.ts"],
+      "@web-bling/lazy-loaded-styles": ["libs/lazy-loaded-styles/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

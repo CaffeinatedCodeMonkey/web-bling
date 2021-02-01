@@ -44,7 +44,18 @@
             "tsConfig": "apps/demo/tsconfig.app.json",
             "aot": true,
             "assets": ["apps/demo/src/favicon.ico", "apps/demo/src/assets"],
-            "styles": ["apps/demo/src/styles.scss"],
+            "styles": [
+              {
+                "input": "apps/demo/src/styles.scss",
+                "inject": false,
+                "bundleName": "global"
+              },
+              {
+                "input": "apps/demo/src/assets/header-span.component.scss",
+                "inject": false,
+                "bundleName": "header-span"
+              }
+            ],
             "scripts": []
           },
           "configurations": {
@@ -135,6 +146,56 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/demo-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "bundled-styles": {
+      "projectType": "library",
+      "root": "libs/bundled-styles",
+      "sourceRoot": "libs/bundled-styles/src",
+      "prefix": "web-bling",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/bundled-styles/src/**/*.ts",
+              "libs/bundled-styles/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/bundled-styles"],
+          "options": {
+            "jestConfig": "libs/bundled-styles/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "lazy-loaded-styles": {
+      "projectType": "library",
+      "root": "libs/lazy-loaded-styles",
+      "sourceRoot": "libs/lazy-loaded-styles/src",
+      "prefix": "web-bling",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/lazy-loaded-styles/src/**/*.ts",
+              "libs/lazy-loaded-styles/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/lazy-loaded-styles"],
+          "options": {
+            "jestConfig": "libs/lazy-loaded-styles/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
