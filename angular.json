@@ -204,6 +204,56 @@
           }
         }
       }
+    },
+    "resolve-styles": {
+      "projectType": "library",
+      "root": "libs/resolve-styles",
+      "sourceRoot": "libs/resolve-styles/src",
+      "prefix": "web-bling",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/resolve-styles/src/**/*.ts",
+              "libs/resolve-styles/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/resolve-styles"],
+          "options": {
+            "jestConfig": "libs/resolve-styles/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "wait-for-lazy-styles": {
+      "projectType": "library",
+      "root": "libs/wait-for-lazy-styles",
+      "sourceRoot": "libs/wait-for-lazy-styles/src",
+      "prefix": "web-bling",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/wait-for-lazy-styles/src/**/*.ts",
+              "libs/wait-for-lazy-styles/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/wait-for-lazy-styles"],
+          "options": {
+            "jestConfig": "libs/wait-for-lazy-styles/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

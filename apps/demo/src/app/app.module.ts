@@ -6,9 +6,12 @@ import { createCustomElement } from '@angular/elements';
 
 /**
  * Switch which module is loaded to see the results of a different strategy.
+ * Note: The bundled-styles module is much more bloated with large CSS files
+ * when compared to the other modules with the same.
  */
-import { LazyLoadedStylesModule as StyleModule, EntryPointComponent } from '@web-bling/lazy-loaded-styles';
-// import { BundledStylesModule as StyleModule, EntryPointComponent } from '@web-bling/bundled-styles';
+// import { LazyLoadedStylesModule as StyleModule, EntryPointComponent } from '@web-bling/lazy-loaded-styles';
+// import { WaitForLazyStylesModule as StyleModule, EntryPointComponent } from '@web-bling/wait-for-lazy-styles';
+import { BundledStylesModule as StyleModule, EntryPointComponent } from '@web-bling/bundled-styles';
 
 @NgModule({
   declarations: [AppComponent],

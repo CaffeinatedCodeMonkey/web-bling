@@ -19,6 +19,8 @@
     "demo": { "tags": [] },
     "demo-e2e": { "tags": [], "implicitDependencies": ["demo"] },
     "bundled-styles": { "tags": [] },
-    "lazy-loaded-styles": { "tags": [] }
+    "lazy-loaded-styles": { "tags": [] },
+    "resolve-styles": { "tags": [] },
+    "wait-for-lazy-styles": { "tags": [] }
   }
 }
