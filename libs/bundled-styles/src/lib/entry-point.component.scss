@@ -1,11 +1,3 @@
 @import "/apps/demo/src/styles.scss";
-span {
-  color: red;
-  font-size: 10px;
-}
-label {
-  color: #CCC;
-}
-input {
-  color: green;
-}
+@import "../../../../apps/demo/src/assets/header-span.component";
+@import "../../../../apps/demo/src/assets/input.component";
