@@ -33,7 +33,7 @@ In attempting to use web components derived from components in a regular Angular
 it is very easy to fall into an unacceptable styling situation (illustrated below). This section outlines several
 strategies to handle this, with illustrations of each.
 
-[](./documentation/expecting-global.png)
+![](./documentation/expecting-global.png)
 
 **NOTE**: Web components shouldn't rely on global styles. Yet, elements within a component may depend on common styles. 
 Therefore, "semi-global" styles may be necessary, meaning that they behave like global styles, but are scoped to children
@@ -45,7 +45,7 @@ In this approach, shared styles are repeated for each web component and subcompo
 
 **This strategy wasn't even attempted as it stood to incorporate far too much style duplication.**
 
-[](./documentation/bundled.png)
+![](./documentation/bundled.png)
 
 ### Bundled with Semi-Global
 
@@ -54,7 +54,7 @@ In this approach, semi-global styles are imported into the entry component's sty
 **Modules**:
 - _BundledStylesModule_
 
-[](./documentation/bundled-semiglobal.png)
+![](./documentation/bundled-semiglobal.png)
 
 **Heap Size**: 6.9MB
 
@@ -81,7 +81,7 @@ In this approach, semi-global styles are imported via link tags in the entry com
 - _WaitForLazyStylesModule_: Adds the link tags to the web component programmatically, with a hook for completion. 
   (NOT PROFILED - Adds more functionality, but essentially works on same method.)
 
-[](./documentation/reused-semiglobal.png)
+![](./documentation/reused-semiglobal.png)
 
 **Heap Size**: 6.2MB
 
