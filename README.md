@@ -64,17 +64,20 @@ In this approach, semi-global styles are imported into the entry component's sty
 |---------------------|---------------|----------:|
 | vendor.js           | vendor        |   2.45 MB |
 | main.js             | main          |   2.22 MB |
-| input.css           | input         | 159.25 kB |
-| header-span.css     | header-span   | 159.24 kB |
-| global.css          | global        | 159.20 kB |
+| input.css (lazy)          | input         | 159.25 kB |
+| header-span.css (lazy)    | header-span   | 159.24 kB |
+| global.css (lazy)         | global        | 159.20 kB |
 | polyfills.js        | polyfills     | 155.66 kB |
 | runtime.js          | runtime       |   6.15 kB |
 |                     |               |           |
 |                     | Initial Total |   5.29 MB |
+Note: Total = 4.82 MB when excluding lazy styles.
 
 ### Lazy Loaded
 
 In this approach, semi-global styles are imported via link tags in the entry component's template.
+
+Note: In this approach, the --deploy-url is not automatically propagated in the HTML on build. So it needs to be accounted for.
 
 **Modules**:
 - _LazyLoadedStylesModule_: Adds the link tags directly to the template.
